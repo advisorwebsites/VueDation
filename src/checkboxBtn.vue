@@ -1,13 +1,13 @@
 <template>
-  <label class="btn"
+  <label class="button"
   v-bind:class="{
     'active':checked,
-    'btn-success':type == 'success',
-    'btn-warning':type == 'warning',
-    'btn-info':type == 'info',
-    'btn-danger':type == 'danger',
-    'btn-default':type == 'default',
-    'btn-primary':type == 'primary'
+    'success':type == 'success',
+    'warning':type == 'warning',
+    'info':type == 'info',
+    'danger':type == 'danger',
+    'default':type == 'default',
+    'primary':type == 'primary'
   }">
 
     <input type="checkbox" autocomplete="off"

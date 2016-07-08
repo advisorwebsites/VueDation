@@ -1,5 +1,9 @@
 <template>
-  <div class="btn-group" data-toggle="buttons">
+  <div class="button-group" :class="{
+    'tiny':sizing == 'tiny',
+    'small':sizing == 'small',
+    'large':sizing == 'large'
+  }">
     <slot></slot>
   </div>
 </template>
@@ -16,6 +20,10 @@
       type: {
         type: String,
         default: 'default'
+      },
+      sizing: {
+        type: String,
+        default: ''
       }
     }
   }

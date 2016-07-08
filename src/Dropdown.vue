@@ -1,5 +1,5 @@
 <template>
-  <div class="btn-group">
+  <div class="button-group">
     <slot></slot>
     <slot name="dropdown-menu"></slot>
   </div>
@@ -15,7 +15,7 @@
     },
     ready() {
       const el = this.$el
-      const toggle = el.querySelector('[data-toggle="dropdown"]')
+      const toggle = el.querySelector('[data-dropdown-menu]')
       if (toggle)
       {
         toggle.style.borderRadius = '4px'

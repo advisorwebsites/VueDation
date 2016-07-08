@@ -1,5 +1,5 @@
 export {alert}  from './Alert.vue'
-export {carousel} from './Carousel.vue'
+export {orbit} from './Orbit.vue'
 export {slider} from './Slider.vue'
 export {accordion} from './Accordion.vue'
 export {affix} from './Affix.vue'

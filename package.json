@@ -1,8 +1,8 @@
 {
-  "name": "vue-strap",
+  "name": "vuedation",
   "version": "1.0.11",
-  "description": "Bootstrap components built with Vue.js",
-  "main": "dist/vue-strap.js",
+  "description": "Foundation components built with Vue.js",
+  "main": "dist/vuedation.js",
   "repository": {
     "type": "git",
     "url": "yuche/vue-strap"
@@ -12,8 +12,10 @@
     "src": "src/"
   },
   "dependencies": {
+    "bootstrap": "^3.3.5",
+    "foundation-sites": "^6.2.3",
     "vue": "^1.0.8",
-    "bootstrap": "^3.3.5"
+    "vuetable": "^1.2.0"
   },
   "files": [
     "LICENSE",

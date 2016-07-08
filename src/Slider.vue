@@ -1,7 +1,7 @@
 <template>
-  <div class="item">
+  <li class="orbit-slide">
     <slot></slot>
-  </div>
+  </li>
 </template>
 
 <script>

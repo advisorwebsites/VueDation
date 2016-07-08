@@ -1,21 +1,15 @@
 <template>
-<div class="carousel slide" data-ride="carousel">
+<div class="orbit" role="region" data-orbit>
   <!-- Indicators -->
-  <ol class="carousel-indicators" v-show="indicators">
+  <nav class="orbit-bullets" v-show="indicators">
     <indicator :indicator.sync="indicator" :active-index.sync="activeIndex" :is-animating.sync="isAnimating"></indicator>
-  </ol>
+  </nav>
   <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
+  <div class="orbit-container" role="listbox">
+    <!-- Controls -->
+    <button v-show="controls" class="orbit-previous" @click="prevClick"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+    <button v-show="controls" class="orbit-next" @click="nextClick"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
     <slot></slot>
-  </div>
-  <!-- Controls -->
-  <div v-show="controls" class="carousel-controls hidden-xs">
-    <a class="left carousel-control" role="button" @click="prevClick">
-      <span class="fa fa-arrow-left" aria-hidden="true"></span>
-    </a>
-    <a class="right carousel-control" role="button" @click="nextClick">
-      <span class="fa fa-arrow-right" aria-hidden="true"></span>
-    </a>
   </div>
 </div>
 </template>
@@ -45,7 +39,7 @@ import coerceBoolean from './utils/coerceBoolean.js'
       'indicator': {
         //inherit: true,
         props: ['indicator', 'activeIndex', 'isAnimating'],
-        template: '<li v-for="i in indicator" @click="handleIndicatorClick($index)" v-bind:class="{\'active\':$index === activeIndex}"><span></span></li>',
+        template: '<button v-for="i in indicator" @click="handleIndicatorClick($index)" v-bind:class="{\'is-active\':$index === activeIndex}"><span></span></button>',
         methods: {
           handleIndicatorClick(index) {
             if (this.isAnimating || this.activeIndex === index) return false
@@ -64,7 +58,7 @@ import coerceBoolean from './utils/coerceBoolean.js'
     },
     computed: {
       slider() {
-        return this.$el.querySelectorAll('.item')
+        return this.$el.querySelectorAll('.orbit-slide')
       }
     },
     watch: {
@@ -80,7 +74,7 @@ import coerceBoolean from './utils/coerceBoolean.js'
         const prevSelectedEl = this.slider[prev]
         const selectedEl = this.slider[selected]
         const transitionendFn = ()=> {
-          [...this.slider].forEach((el)=> el.className = 'item')
+          [...this.slider].forEach((el)=> el.className = 'orbit-slide')
           selectedEl.classList.add('active')
           this.isAnimating = false
         }
@@ -121,7 +115,7 @@ import coerceBoolean from './utils/coerceBoolean.js'
 </script>
 
 <style scoped>
-  .carousel-control {
+  .orbit-previous, .orbit-next {
     cursor: pointer;
   }
 </style>

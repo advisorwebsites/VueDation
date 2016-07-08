@@ -1,24 +1,19 @@
 <template>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="accordion-toggle"
-          @click="toggleIsOpen()">
-          <slot name="header"> 
-            {{ header }}
-          </slot>
-        </a>
-      </h4>
-    </div>
-    <div class="panel-collapse"
-      v-el:panel
-      v-show="isOpen"
-      transition="collapse"
-    >
-      <div class="panel-body">
-        <slot></slot>
-      </div>
-    </div>
+  <div class="callout" :class="{
+    'primary':type == 'primary',
+    'secondary':type == 'secondary',
+    'success':type == 'success',
+    'warning':type == 'warning',
+    'alert':type == 'alert',
+    'small':sizing == 'small',
+    'large':sizing == 'large'
+    }">
+    <h5>
+      <slot name="header"> 
+        {{ header }}
+      </slot>
+    </h5>
+    <slot></slot>
   </div>
 </template>
 
@@ -33,6 +28,12 @@ import coerceBoolean from './utils/coerceBoolean.js'
         default: false
       },
       header: {
+        type: String
+      },
+      type: {
+        type: String
+      },
+      sizing: {
         type: String
       }
     },

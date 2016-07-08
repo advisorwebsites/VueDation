@@ -1,5 +1,5 @@
 import alert from './Alert.vue'
-import carousel from './Carousel.vue'
+import orbit from './Orbit.vue'
 import slider from './Slider.vue'
 import accordion from './Accordion.vue'
 import affix from './Affix.vue'
@@ -23,9 +23,9 @@ import typeahead from './Typeahead.vue'
 import navbar from './Navbar.vue'
 import spinner from './Spinner.vue'
 
-const VueStrap = {
+const VueDation = {
   alert,
-  carousel,
+  orbit,
   slider,
   accordion,
   affix,
@@ -50,4 +50,4 @@ const VueStrap = {
   spinner
 }
 
-module.exports = VueStrap
+module.exports = VueDation

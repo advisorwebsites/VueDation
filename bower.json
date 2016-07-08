@@ -1,14 +1,14 @@
 {
-  "name": "vue-strap",
-  "homepage": "https://github.com/yuche/vue-strap",
+  "name": "vueDation",
+  "homepage": "",
   "authors": [
-    "yuche <i@yuche.me>"
+    "Lucas Rasmussen <lucasr@advisorwebsites.com"
   ],
-  "description": "Boostrap components built with Vue.js",
+  "description": "Foundation 6 components built with Vue.js",
   "main": [
-    "dist/vue-strap.js",
-    "dist/vue-strap.js.map",
-    "dist/vue-strap.min.js"
+    "dist/vuedation.js",
+    "dist/vuedation.js.map",
+    "dist/vuedation.min.js"
   ],
   "moduleType": ["amd","globals"],
   "keywords": [
